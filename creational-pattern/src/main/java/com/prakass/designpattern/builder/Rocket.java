@@ -87,7 +87,7 @@ public class Rocket {
     private Rocket() {
     }
 
-    public Rocket(RocketBuilder builder) {
+    private Rocket(RocketBuilder builder) {
         this.modelName = builder.rocket.modelName;
         this.manufactorCompanyName = builder.rocket.manufactorCompanyName;
         this.manufactorYear = builder.rocket.manufactorYear;

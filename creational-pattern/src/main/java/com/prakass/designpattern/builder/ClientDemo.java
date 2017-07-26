@@ -28,7 +28,7 @@ public class ClientDemo {
         Rocket.RocketBuilder builder = new Rocket.RocketBuilder();
         Rocket rocket = builder.modelName("PRSP-3 Dragon").manufactorCompanyName("Prakass").manufactorYear(2017).fuelQuantity(2000)
                 .payloadSystemName("Heavy layload system").propulsionSystemName("Super propulsion system").build();
-        System.out.println("Rocket build!");
+        System.out.println("Rocket built!");
         System.out.println("Ready to be lunched...");
         System.out.println("Rocket info:");
         System.out.println(rocket);
