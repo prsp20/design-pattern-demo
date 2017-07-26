@@ -31,10 +31,6 @@ package com.prakass.designpattern.builder;
  */
 public class Rocket {
 
-    /**
-     * Rocket builder class.
-     *
-     */
     public static class RocketBuilder {
         private Rocket rocket;
 
