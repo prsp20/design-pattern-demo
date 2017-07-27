@@ -14,16 +14,30 @@
  * limitations under the License.
  */
 
-package com.prakass.designpattern.builder;
+package com.prakass.designpattern.abstractfactory;
 
-public class ClientDemo {
-    public static void main(String[] args) {
-        Rocket.RocketBuilder builder = new Rocket.RocketBuilder();
-        Rocket rocket = builder.modelName("PRSP-3 Dragon").manufactorCompanyName("Prakass").manufactorYear(2017).fuelQuantity(2000)
-                .payloadSystemName("Heavy layload system").propulsionSystemName("Super propulsion system").build();
-        System.out.println("Rocket built!");
-        System.out.println("Ready to be lunched...");
-        System.out.println("Rocket info:");
-        System.out.println(rocket);
+/**
+ * Abstract factory
+ * @author Prakash Sapkota
+ *
+ */
+public abstract class MachineFactory {
+    public static final MachineFactory getInstance(MachineType machineType) {
+        if (machineType == null)
+            return null;
+
+        switch (machineType) {
+            case CAR:
+                return new CarFactory();
+            case ROCKET:
+                return new RocketFactory();
+            default:
+                return null;
+        }
     }
+
+    public abstract Machine getMachine();
+
+    public abstract MachineValidator getValidator();
+
 }

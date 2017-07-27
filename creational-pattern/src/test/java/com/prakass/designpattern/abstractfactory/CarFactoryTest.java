@@ -14,16 +14,24 @@
  * limitations under the License.
  */
 
-package com.prakass.designpattern.builder;
+package com.prakass.designpattern.abstractfactory;
 
-public class ClientDemo {
-    public static void main(String[] args) {
-        Rocket.RocketBuilder builder = new Rocket.RocketBuilder();
-        Rocket rocket = builder.modelName("PRSP-3 Dragon").manufactorCompanyName("Prakass").manufactorYear(2017).fuelQuantity(2000)
-                .payloadSystemName("Heavy layload system").propulsionSystemName("Super propulsion system").build();
-        System.out.println("Rocket built!");
-        System.out.println("Ready to be lunched...");
-        System.out.println("Rocket info:");
-        System.out.println(rocket);
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class CarFactoryTest {
+
+    @Test
+    public void shouldCreateMachineTypeCar() {
+        Machine machine = new CarFactory().getMachine();
+        assertTrue(machine instanceof Car);
     }
+
+    @Test
+    public void shouldCreateCarValidator() {
+        MachineValidator validator = new CarFactory().getValidator();
+        assertTrue(validator instanceof CarValidator);
+    }
+
 }

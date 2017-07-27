@@ -14,16 +14,20 @@
  * limitations under the License.
  */
 
-package com.prakass.designpattern.builder;
+package com.prakass.designpattern.abstractfactory;
 
-public class ClientDemo {
-    public static void main(String[] args) {
-        Rocket.RocketBuilder builder = new Rocket.RocketBuilder();
-        Rocket rocket = builder.modelName("PRSP-3 Dragon").manufactorCompanyName("Prakass").manufactorYear(2017).fuelQuantity(2000)
-                .payloadSystemName("Heavy layload system").propulsionSystemName("Super propulsion system").build();
-        System.out.println("Rocket built!");
-        System.out.println("Ready to be lunched...");
-        System.out.println("Rocket info:");
-        System.out.println(rocket);
+public class Rocket extends Machine{
+
+    @Override
+    public void operate() {
+        System.out.println("Lunching the Rocket...");
+        System.out.println("Rocket lunched!");
     }
+
+    @Override
+    public void stop() {
+        System.out.println("Landing the rocket...");
+        System.out.println("Rocket landed!");
+    }
+
 }

@@ -14,18 +14,9 @@
  * limitations under the License.
  */
 
-package com.prakass.designpattern.singleton;
+package com.prakass.designpattern.abstractfactory;
 
-import static org.junit.Assert.*;
-
-import org.junit.Test;
-
-public class EagerInitializedSingletonTest {
-
-    @Test
-    public void multipleCallShouldReturnSameInstance() {
-        EagerInitializedSingleton instance1 = EagerInitializedSingleton.getInstance();
-        EagerInitializedSingleton instance2 = EagerInitializedSingleton.getInstance();
-        assertSame(instance1, instance2);
-    }
+public enum MachineType {
+    CAR,
+    ROCKET
 }

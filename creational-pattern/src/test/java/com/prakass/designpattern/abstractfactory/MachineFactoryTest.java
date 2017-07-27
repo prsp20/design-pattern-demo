@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.prakass.designpattern.factory;
+package com.prakass.designpattern.abstractfactory;
 
 import static org.junit.Assert.*;
 
@@ -22,24 +22,24 @@ import static org.hamcrest.Matchers.*;
 
 import org.junit.Test;
 
-public class ProductFactoryTest {
+public class MachineFactoryTest {
 
     @Test
-    public void shouldCreateCameraProduct() {
-        Product product = ProductFactory.getProduct(ProductType.CAMERA);
-        assertThat(product.constructProductDescription(), containsString("camera"));
+    public void shouldCreateCarFactoryWhenMachineTypeIsCar() {
+        MachineFactory machineFactory = MachineFactory.getInstance(MachineType.CAR);
+        assertTrue(machineFactory instanceof CarFactory);
     }
 
     @Test
-    public void shouldCreateLaptopProduct() {
-        Product product = ProductFactory.getProduct(ProductType.LAPTOP);
-        assertThat(product.constructProductDescription(), containsString("laptop"));
+    public void shouldCreateRocketFactoryWhenMachineTypeIsRocket() {
+        MachineFactory machineFactory = MachineFactory.getInstance(MachineType.ROCKET);
+        assertTrue(machineFactory instanceof RocketFactory);
     }
 
     @Test
-    public void shouldReturnNullForUnknownType() {
-        Product product = ProductFactory.getProduct(null);
-        assertThat(product, is(nullValue()));
+    public void shouldReturnNullForInvalidMachineType() {
+        MachineFactory machineFactory = MachineFactory.getInstance(null);
+        assertThat(machineFactory, is(nullValue()));
     }
 
 }
