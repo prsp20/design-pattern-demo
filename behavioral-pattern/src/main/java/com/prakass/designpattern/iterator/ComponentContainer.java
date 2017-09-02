@@ -33,7 +33,7 @@ public class ComponentContainer implements Iterable<Component> {
     // Also a dummy map containing binary components
     private Map<String, Component> binaryComponents = new HashMap<>();
 
-    Iterator<Component> iterator = null;
+    private Iterator<Component> iterator = null;
 
     public ComponentContainer() {}
 
